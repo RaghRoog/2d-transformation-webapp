@@ -32,3 +32,6 @@
 .point-input{
     width: 90px;
 }
+.confirm-btn{
+    display: none;
+}
