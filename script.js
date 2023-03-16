@@ -1,5 +1,6 @@
 let pointsNumberDisplay = document.querySelector('.points-number-display')
 let pointsNumberInput = document.querySelector('.points-number-input')
+let confirmBtn = document.querySelector('.confirm-btn')
 
 //displaying current value of input
 pointsNumberInput.addEventListener('change', () =>{
@@ -38,12 +39,26 @@ function makePointsInputs(){
     pointIndicatorX.style.display = 'block'
     let pointIndicatorY = document.querySelector('.point-indicator-y')
     pointIndicatorY.style.display = 'block'
+    confirmBtn.style.display = 'block'
 }
 
 let acceptBtn = document.querySelector('.accept-btn')
 acceptBtn.addEventListener('click', makePointsInputs)
 
+let userInputPoints = {
+    x: [],
+    y: []
+}
 
+function getPoints(){
+    let inputs = document.querySelectorAll('.point-input')
+    for(let i = 0; i < inputs.length/2; i++){
+        userInputPoints.x.push(inputs[i].value)
+        userInputPoints.y.push(inputs[i + inputs.length/2].value)
+    }
+}
+
+confirmBtn.addEventListener('click', getPoints)
 
 // let matrixAColumns = prompt("matrix A columns");
 // let matrixARows = prompt("matrix A rows");
