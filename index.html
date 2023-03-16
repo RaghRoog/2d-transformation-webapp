@@ -9,20 +9,39 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <p>How many points you want to transform?</p>
-        <input value="1" type="range" min="1" max="8" class="points-number-input">
-        <p class="points-number-display">1</p>
-        <button class="accept-btn">Accept</button>
-        <div class="main-container">
-            <div class="point-number-container"></div>
-            <div class="container">
-                <div>
-                    <p class="point-indicator-x">X</p>
-                    <p class="point-indicator-y">Y</p>
+        <div class="points-input-page">
+            <p>How many points you want to transform?</p>
+            <input value="1" type="range" min="1" max="8" class="points-number-input">
+            <p class="points-number-display">1</p>
+            <button class="accept-btn">Accept</button>
+            <div class="main-container">
+                <div class="point-number-container"></div>
+                <div class="container">
+                    <div>
+                        <p class="point-indicator-x">X</p>
+                        <p class="point-indicator-y">Y</p>
+                    </div>
+                    <div class="points-input-container"></div>
+                    <button class="confirm-btn">Confirm</button>
                 </div>
-                <div class="points-input-container"></div>
-                <button class="confirm-btn">Confirm</button>
             </div>
+        </div>
+        <div class="transformations-page">
+            <p>Choose transformations in right order</p>
+            <p>Translation to the origin of the coordinate system (if you, for example, choose rotation)
+               is made automatically
+            </p>
+            <select name="transformation-select" id="transformation-select">
+                <option value="">Choose...</option>
+                <option value="translation">Translation</option>
+                <option value="scaling">Scaling</option>
+                <option value="rotation">Rotation about the origin</option>
+                <option value="shearing-x">Shearing in X direction</option>
+                <option value="shearing-y">Shearing in Y direction</option>
+                <option value="reflection-x">Reflection on X axis</option>
+                <option value="reflection-y">Reflection on Y axis</option>
+            </select>
+            <div class="transformations-input-container"></div>
         </div>
     </body>
 </html>

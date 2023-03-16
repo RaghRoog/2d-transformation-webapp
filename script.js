@@ -1,6 +1,10 @@
 let pointsNumberDisplay = document.querySelector('.points-number-display')
 let pointsNumberInput = document.querySelector('.points-number-input')
 let confirmBtn = document.querySelector('.confirm-btn')
+let pointsInputPage = document.querySelector('.points-input-page')
+let transformationsPage = document.querySelector('.transformations-page')
+let transformationsSelect = document.getElementById('transformation-select')
+let transformationsInputContainer = document.querySelector('.transformations-input-container')
 
 //displaying current value of input
 pointsNumberInput.addEventListener('change', () =>{
@@ -56,9 +60,42 @@ function getPoints(){
         userInputPoints.x.push(inputs[i].value)
         userInputPoints.y.push(inputs[i + inputs.length/2].value)
     }
+    pointsInputPage.style.display = 'none'
+    transformationsPage.style.display = 'block'
 }
 
 confirmBtn.addEventListener('click', getPoints)
+
+function getTransformations(){
+    let currentTransform = transformationsSelect.value
+    switch(currentTransform){
+        case 'translation':
+            transformationsInputContainer.innerHTML = 'translation'
+            break;
+        case 'scaling':
+            console.log('scaling')
+            break;
+        case 'rotation':
+            console.log('rotation')
+            break;
+        case 'shearing-x':
+            console.log('shearing-x')
+            break;
+        case 'shearing-y':
+            console.log('shearing-y')
+            break;
+        case 'reflection-x':
+            console.log('reflection-x')
+            break;
+        case 'reflection-y':
+            console.log('reflection-y')
+            break;
+        default:
+            console.log('defalu')
+    }
+}
+
+transformationsSelect.addEventListener('change', getTransformations)
 
 // let matrixAColumns = prompt("matrix A columns");
 // let matrixARows = prompt("matrix A rows");
